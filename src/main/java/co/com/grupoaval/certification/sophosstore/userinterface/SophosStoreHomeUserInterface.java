@@ -19,7 +19,13 @@ public class SophosStoreHomeUserInterface {
 	public static final Target BTN_MENUSUPERIOR = Target.the("Opciones del menu superior")
 			.locatedBy("//app-menu/mat-toolbar/a[.='{0}']");
 
+	public static final Target BTN_CELULARES = Target.the("Opciones del menu superior")
+			.locatedBy("//app-menu/mat-toolbar/a[.='Celulares']");
+
+	public static final Target BTN_CARRITO = Target.the("Botón Correspondiente al carrito de compra")
+			.locatedBy("//div/button[contains(.,'shopping_cart')]");
+
+	public static final Target BTN_DETALLECARRITO = Target.the("Ingresa al Detalle del Carrito")
+			.locatedBy("//div/b/a[contains(.,'VER CARRITO')]");
 
 }
-
-

@@ -11,11 +11,28 @@ Feature: Realizar compra en la pagina SophosStore
       | username | password  |
       | chenamol | prueba123 |
     And el usuario agrega los productos a comprar
-      | categoria  | producto                              |
-      | Celulares  | Airpods                               |
-      | Audio      | Celular HUAWEI Psmart 2019 DS 4G Rojo |
-      #| Accesorios | Popsocket                             |
-    And el usuario elimina uno de los productos del carrito
       | categoria | producto                              |
-      | AUDIO     | Celular HUAWEI Psmart 2019 DS 4G Rojo |
+      | Celulares | Airpods                               |
+      | Audio     | Celular HUAWEI Psmart 2019 DS 4G Rojo |
+    # | Accesorios | Popsocket                             |
+    And el usuario elimina uno de los productos del carrito
+      | producto                              |
+      | Celular HUAWEI Psmart 2019 DS 4G Rojo |
     Then el finaliza con la compra con exito visualizando el mensaje Felicidades! Su orden ha sido procesada
+    
+    
+    
+  #@Realizar_Compra_Por_todas_las_categorias
+  #Scenario: Realizar Compra desde todas las categorias.
+    #Given que el usuario se encuentra en la pagina principal
+    #When el ingresa la informacion de la cuenta
+      #| username | password  |
+      #| chenamol | prueba123 |
+    #And el usuario agrega los productos a comprar desde la seccion Todas las categorias
+      #| producto                              |
+      #| Airpods                               |
+      #| Celular HUAWEI Psmart 2019 DS 4G Rojo |
+    #And el usuario elimina uno de los productos del carrito
+      #| producto                              |
+      #| Celular HUAWEI Psmart 2019 DS 4G Rojo |
+    #Then el finaliza con la compra con exito visualizando el mensaje Felicidades! Su orden ha sido procesada

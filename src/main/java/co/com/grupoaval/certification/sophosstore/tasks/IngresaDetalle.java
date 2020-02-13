@@ -19,7 +19,7 @@ public class IngresaDetalle implements Task {
 		}
 
 	}
-
+ 
 	public static IngresaDetalle deCuenta() {
 		return instrumented(IngresaDetalle.class);
 	}

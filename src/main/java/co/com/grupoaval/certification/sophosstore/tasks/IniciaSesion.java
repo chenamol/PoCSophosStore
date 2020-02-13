@@ -14,7 +14,7 @@ public class IniciaSesion implements Task {
 
 	public IniciaSesion(String username) {
 		this.username = username;
-	}
+	} 
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {

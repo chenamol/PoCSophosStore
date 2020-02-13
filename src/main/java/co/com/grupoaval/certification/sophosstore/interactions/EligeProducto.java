@@ -2,9 +2,6 @@ package co.com.grupoaval.certification.sophosstore.interactions;
 
 import java.util.List;
 
-import org.openqa.selenium.WebElement;
-
-import co.com.grupoaval.certification.sophosstore.userinterface.SophosStoreHomeUserInterface;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
