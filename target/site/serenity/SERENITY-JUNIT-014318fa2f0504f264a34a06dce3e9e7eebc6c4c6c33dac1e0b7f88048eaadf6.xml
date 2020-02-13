@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Realizar compra en la pagina SophosStore" skipped="0" tests="1" time="66.81" timestamp="2020-02-13 04:41:22"><testcase name="Realizar Compra"><failure message="&#10;Expected: is &quot;Felicidades! Su orden ha sido procesad&quot;&#10;     but: was &quot;Felicidades! Su orden ha sido procesada&quot;" type="java.lang.AssertionError">
-Expected: is "Felicidades! Su orden ha sido procesad"
-     but: was "Felicidades! Su orden ha sido procesada"</failure><system-err>
-Expected: is "Felicidades! Su orden ha sido procesad"
-     but: was "Felicidades! Su orden ha sido procesada"&#13;
-co.com.grupoaval.certification.sophosstore.stepdefinitions.RealizarCompraStepDefinition.elFinalizaConLaCompraConExitoVisualizandoElMensaje(RealizarCompraStepDefinition.java:52)&#13;
-✽.el finaliza con la compra con exito visualizando el mensaje Felicidades! Su orden ha sido procesad(src/test/resources/features/realizar_compra.feature:21)&#13;
-</system-err></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Realizar compra en la pagina SophosStore" skipped="0" tests="1" time="86.82" timestamp="2020-02-13 05:04:24"><testcase name="Realizar Compra"/></testsuite>

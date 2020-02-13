@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.hamcrest.Matchers;
 
-import co.com.grupoaval.certification.sophosstore.models.DatosDeProducto;
 import co.com.grupoaval.certification.sophosstore.models.DatosSelecionProducto;
 import co.com.grupoaval.certification.sophosstore.questions.VerificarCompra;
 import co.com.grupoaval.certification.sophosstore.tasks.AgregaProductos;

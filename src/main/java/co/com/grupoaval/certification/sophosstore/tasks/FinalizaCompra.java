@@ -1,13 +1,10 @@
 package co.com.grupoaval.certification.sophosstore.tasks;
 
-import co.com.grupoaval.certification.sophosstore.models.DatosDeProducto;
-import co.com.grupoaval.certification.sophosstore.models.DatosDeUsuario;
 import co.com.grupoaval.certification.sophosstore.userinterface.SophosStoreCartUserInterface;
 import co.com.grupoaval.certification.sophosstore.userinterface.SophosStoreCheckoutUserInterface;
 import co.com.grupoaval.certification.sophosstore.userinterface.SophosStoreConfirmOrderUserInterface;
 import co.com.grupoaval.certification.sophosstore.userinterface.SophosStorePaymentResultUserInterface;
 import co.com.grupoaval.certification.sophosstore.userinterface.SophosStorePaymentUserInterface;
-import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
