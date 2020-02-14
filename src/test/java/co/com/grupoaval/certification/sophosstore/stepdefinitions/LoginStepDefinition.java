@@ -49,8 +49,8 @@ public class LoginStepDefinition {
 
 	}
 
-	@Then("^el se registra exitosamente visualizando su nombre (.*)$")
-	public void elSeRegistraExitosamenteVisualizandoSuNombre(String name) {
+	@Then("^el se registra exitosamente visualizando su imagen de perfil$")
+	public void elSeRegistraExitosamenteVisualizandoSuNombre() {
 		OnStage.theActorInTheSpotlight().attemptsTo(IngresaDetalle.deCuenta());
 		OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerificarNombreCuenta.conNombre()));
 	}

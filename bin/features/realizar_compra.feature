@@ -21,7 +21,7 @@ Feature: Realizar compra en la pagina SophosStore
       | nombre | pApellido | sApellido | compania | email          | telefono | pais     | ciudad   | estado    | codigoPostal | direccion       |
       | Cesar  | Henao     | Molina    | qVision  | chena@corp.com | 31375544 | Colombia | Medellin | Antioquia |    050035111 | cll 36 # 20 -13 |
     Then el usuario verifica la informacion de envio
-    And el usuario selecciona metodo de pago a travez de pse con datos
+    And el usuario selecciona metodo de pago a traves de pse con datos
       | banco              | tipoPersona | nombreTitular | tipoDocumento | documento  | email          | telefono |
       | Banco de Occidente | Natural     | Cesar Henao   | CC            | 1076632222 | chena@corp.com | 31375544 |
     And el finaliza con la compra con exito visualizando el mensaje Felicidades! Su orden ha sido procesada
@@ -43,7 +43,7 @@ Feature: Realizar compra en la pagina SophosStore
       #| nombre | pApellido | sApellido | compania | email          | telefono | pais     | ciudad   | estado    | codigoPostal | direccion       |
       #| Cesar  | Henao     | Molina    | qVision  | chena@corp.com | 31375544 | Colombia | Medellin | Antioquia |    050035111 | cll 36 # 20 -13 |
     #Then el usuario verifica la informacion de envio
-    #And el usuario selecciona metodo de pago a travez de pse con dtos
+    #And el usuario selecciona metodo de pago a traves de pse con dtos
       #| banco              | tipoPersona | nombreTitular | tipoDocumento | documento  | email          | telefono |
       #| Banco de Occidente | Natural     | Cesar Henao   | CC            | 1076632222 | chena@corp.com | 31375544 |
     #Then el finaliza con la compra con exito visualizando el mensaje Felicidades! Su orden ha sido procesada

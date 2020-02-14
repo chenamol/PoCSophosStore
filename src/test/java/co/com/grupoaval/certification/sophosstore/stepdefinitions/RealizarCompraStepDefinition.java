@@ -38,10 +38,7 @@ public class RealizarCompraStepDefinition {
 				AgregaProductosPorCategoria.seleccionaCategoria(DatosSelecionProducto.get(0).getCategoria())
 						.seleccionaProducto(DatosSelecionProducto.get(0).getProducto()),
 				AgregaProductosPorCategoria.seleccionaCategoria(DatosSelecionProducto.get(1).getCategoria())
-						.seleccionaProducto(DatosSelecionProducto.get(1).getProducto())
-//				AgregaProductosPorCategoria.seleccionaCategoria(DatosSelecionProducto.get(2).getCategoria())
-//						.seleccionaProducto(DatosSelecionProducto.get(2).getProducto())
-		);
+						.seleccionaProducto(DatosSelecionProducto.get(1).getProducto()));
 	}
 
 	@When("^el usuario elimina uno de los productos del carrito$")
@@ -70,7 +67,7 @@ public class RealizarCompraStepDefinition {
 
 	}
 
-	@Then("^el usuario selecciona metodo de pago a travez de pse con datos$")
+	@Then("^el usuario selecciona metodo de pago a traves de pse con datos$")
 	public void elUsuarioSeleccionaMetodoDePagoATravezDePseConDtos(List<DatosDePagoPSE> DatosDePagoPSE) {
 		OnStage.theActorInTheSpotlight()
 				.attemptsTo(DiligenciaMetodoDePagoPSE.conBanco(DatosDePagoPSE.get(0).getBank())
@@ -84,7 +81,7 @@ public class RealizarCompraStepDefinition {
 
 	@Then("^el finaliza con la compra con exito visualizando el mensaje (.*)$")
 	public void elFinalizaConLaCompraConExitoVisualizandoElMensaje(String mensaje) {
-		OnStage.theActorInTheSpotlight().attemptsTo(FinalizaCompra.conLosDatos());
+		OnStage.theActorInTheSpotlight().attemptsTo(FinalizaCompra.conResultadoDePago());
 		OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerificarCompra.exitosa(), Matchers.is(mensaje)));
 
 	}
