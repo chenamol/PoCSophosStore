@@ -26,7 +26,7 @@ public class SophosStoreCheckoutUserInterface {
 			.locatedBy("//mat-select/div/div/span[contains(.,'País')]");
 
 	public static final Target ELIGEPAIS = Target.the("Selecciona uno de los paises")
-			.locatedBy("//mat-option/span[@class][contains(.,'Colombia')]");
+			.locatedBy("//mat-option/span[@class][contains(.,'{0}')]");
 
 	public static final Target TXT_CIUDAD = Target.the("Campo para ingresar la ciudad del usuario")
 			.locatedBy("//input[@ng-reflect-name='city']");

@@ -8,3 +8,4 @@ public class SophosStoreProccessResultUserInterface {
 			.locatedBy("//div/h2[contains(.,'Felicidades! Su orden ha sido procesada')]");
 
 }
+

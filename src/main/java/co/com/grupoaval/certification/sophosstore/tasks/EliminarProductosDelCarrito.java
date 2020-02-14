@@ -19,7 +19,8 @@ public class EliminarProductosDelCarrito implements Task {
 	public <T extends Actor> void performAs(T actor) {
 		actor.attemptsTo(Click.on(SophosStoreHomeUserInterface.BTN_CARRITO),
 				Click.on(SophosStoreHomeUserInterface.BTN_DETALLECARRITO),
-				Click.on(SophosStoreCartUserInterface.PRODUCTLIST.of(producto)));
+				Click.on(SophosStoreCartUserInterface.PRODUCTLIST.of(producto)),
+				Click.on(SophosStoreCartUserInterface.BTN_PROCEDERALPAGO));
 
 	} 
 

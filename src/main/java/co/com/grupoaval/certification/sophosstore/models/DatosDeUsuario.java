@@ -2,32 +2,32 @@ package co.com.grupoaval.certification.sophosstore.models;
 
 public class DatosDeUsuario {
 
-	private String firstname = "Cesar";
-	private String flastname = "Henao";
-	private String slastname = "Molina";
-	private String company = "qVision";
-	private String email = "chena@comp.com";
-	private String phone = "3133434";
-	private String country = "Colombia";
-	private String city = "Medellin";
-	private String state = "Antioquia";
-	private String postalcode = "0050350";
-	private String address = "Cll43#12-32";
+	private String nombre;
+	private String pApellido;
+	private String sApellido;
+	private String compania;
+	private String email;
+	private String telefono;
+	private String pais;
+	private String ciudad;
+	private String estado;
+	private String codigoPostal;
+	private String direccion;
 
-	public String getName() {
-		return firstname;
+	public String getfirstame() {
+		return nombre;
 	}
 
 	public String getfLastname() {
-		return flastname;
+		return pApellido;
 	}
 
 	public String getsLastname() {
-		return slastname;
+		return sApellido;
 	}
 
 	public String getCompany() {
-		return company;
+		return compania;
 	}
 
 	public String getEmail() {
@@ -35,27 +35,27 @@ public class DatosDeUsuario {
 	}
 
 	public String getPhone() {
-		return phone;
+		return telefono;
 	}
 
 	public String getCountry() {
-		return country;
+		return pais;
 	}
 
 	public String getCity() {
-		return city;
+		return ciudad;
 	}
 
-	public String getstate() {
-		return state;
+	public String getState() {
+		return estado;
 	}
 
-	public String getPostalcode() {
-		return postalcode;
+	public String getPostalCode() {
+		return codigoPostal;
 	}
 
 	public String getAddress() {
-		return address;
+		return direccion;
 	}
 
 }

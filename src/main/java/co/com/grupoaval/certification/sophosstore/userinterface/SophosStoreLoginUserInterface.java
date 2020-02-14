@@ -4,6 +4,12 @@ import net.serenitybdd.screenplay.targets.Target;
 
 public class SophosStoreLoginUserInterface {
 
+	public static final Target BTN_CUENTA = Target.the("Botón para abrir la opcion de ingresar ")
+			.locatedBy("//app-top-menu/div/a[contains(.,'Cuenta')]");
+
+	public static final Target BTN_INGRESAR = Target.the("Botón para visualizar la ventana de inicio de sesión")
+			.locatedBy("//div/span/a[contains(.,'Ingresar')]");
+
 	public static final Target INPUT_USERNAME = Target.the("Ingresa nombre de usuario")
 			.locatedBy("//*[@id=\"mat-input-0\"]");
 

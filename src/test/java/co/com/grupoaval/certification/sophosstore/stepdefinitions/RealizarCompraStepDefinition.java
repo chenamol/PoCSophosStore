@@ -4,10 +4,15 @@ import java.util.List;
 
 import org.hamcrest.Matchers;
 
+import co.com.grupoaval.certification.sophosstore.models.DatosDePagoPSE;
+import co.com.grupoaval.certification.sophosstore.models.DatosDeUsuario;
 import co.com.grupoaval.certification.sophosstore.models.DatosSelecionProducto;
 import co.com.grupoaval.certification.sophosstore.questions.VerificarCompra;
 import co.com.grupoaval.certification.sophosstore.tasks.AgregaProductos;
 import co.com.grupoaval.certification.sophosstore.tasks.AgregaProductosPorCategoria;
+import co.com.grupoaval.certification.sophosstore.tasks.ConfirmaPedido;
+import co.com.grupoaval.certification.sophosstore.tasks.DiligenciaDatos;
+import co.com.grupoaval.certification.sophosstore.tasks.DiligenciaMetodoDePagoPSE;
 import co.com.grupoaval.certification.sophosstore.tasks.EliminarProductosDelCarrito;
 import co.com.grupoaval.certification.sophosstore.tasks.FinalizaCompra;
 import cucumber.api.java.Before;
@@ -43,6 +48,38 @@ public class RealizarCompraStepDefinition {
 	public void elUsuarioEliminaUnoDeLosProductosDelCarrito(List<DatosSelecionProducto> DatosSelecionProducto) {
 		OnStage.theActorInTheSpotlight()
 				.attemptsTo(EliminarProductosDelCarrito.seleccionaProducto(DatosSelecionProducto.get(0).getProducto()));
+	}
+
+	@When("^el usuario diligencia la informacion de envio$")
+	public void elUsuarioDiligenciaLaInformacionDeEnvO(List<DatosDeUsuario> DatosDeUsuario) {
+		OnStage.theActorInTheSpotlight()
+				.attemptsTo(DiligenciaDatos.conNombre(DatosDeUsuario.get(0).getfirstame())
+						.conPrimerApellido(DatosDeUsuario.get(0).getfLastname())
+						.conSegundoApellido(DatosDeUsuario.get(0).getsLastname())
+						.conCompania(DatosDeUsuario.get(0).getCompany()).conEmail(DatosDeUsuario.get(0).getEmail())
+						.conTelefono(DatosDeUsuario.get(0).getPhone()).conPais(DatosDeUsuario.get(0).getCountry())
+						.conCiudad(DatosDeUsuario.get(0).getCity()).conEstado(DatosDeUsuario.get(0).getState())
+						.conCodigoPostal(DatosDeUsuario.get(0).getPostalCode())
+						.conDireccion(DatosDeUsuario.get(0).getAddress()));
+
+	}
+
+	@Then("^el usuario verifica la informacion de envio$")
+	public void elUsuarioVerificaLaInformacionDeEnvio() {
+		OnStage.theActorInTheSpotlight().attemptsTo(ConfirmaPedido.realizado());
+
+	}
+
+	@Then("^el usuario selecciona metodo de pago a travez de pse con datos$")
+	public void elUsuarioSeleccionaMetodoDePagoATravezDePseConDtos(List<DatosDePagoPSE> DatosDePagoPSE) {
+		OnStage.theActorInTheSpotlight()
+				.attemptsTo(DiligenciaMetodoDePagoPSE.conBanco(DatosDePagoPSE.get(0).getBank())
+						.conTipoPersona(DatosDePagoPSE.get(0).getKindPerson())
+						.conNombreTirular(DatosDePagoPSE.get(0).getOwnerName())
+						.conTipoDocumento(DatosDePagoPSE.get(0).getDocumentType())
+						.conDocumento(DatosDePagoPSE.get(0).getDocument()).conEmail(DatosDePagoPSE.get(0).getEmail())
+						.conTelefono(DatosDePagoPSE.get(0).getPhone()));
+
 	}
 
 	@Then("^el finaliza con la compra con exito visualizando el mensaje (.*)$")

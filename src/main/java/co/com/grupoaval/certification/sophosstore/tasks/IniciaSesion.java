@@ -14,11 +14,13 @@ public class IniciaSesion implements Task {
 
 	public IniciaSesion(String username) {
 		this.username = username;
-	} 
+	}
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		actor.attemptsTo(Enter.theValue(username).into(SophosStoreLoginUserInterface.INPUT_USERNAME),
+		actor.attemptsTo(Click.on(SophosStoreLoginUserInterface.BTN_CUENTA),
+				Click.on(SophosStoreLoginUserInterface.BTN_INGRESAR),
+				Enter.theValue(username).into(SophosStoreLoginUserInterface.INPUT_USERNAME),
 				Enter.theValue(password).into(SophosStoreLoginUserInterface.INPUT_PASSWORD),
 				Click.on(SophosStoreLoginUserInterface.BTN_LOGIN));
 

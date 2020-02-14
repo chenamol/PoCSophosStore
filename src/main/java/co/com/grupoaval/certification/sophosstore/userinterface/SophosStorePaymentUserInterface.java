@@ -11,13 +11,13 @@ public class SophosStorePaymentUserInterface {
 			.locatedBy("//div/span[contains(.,'Banco grupo aval')]");
 
 	public static final Target SLC_BANCO = Target.the("Selecciona uno de los bancos")
-			.locatedBy("//mat-option/span[contains(.,' Banco de Occidente ')]");
+			.locatedBy("//mat-option/span[contains(.,'{0}')]");
 
 	public static final Target DDL_TIPOPERSONA = Target.the("Lista para seleccionar el banco")
 			.locatedBy("//div/span[contains(.,'Tipo de Persona')]");
 
 	public static final Target SLC_PERSONA = Target.the("Selcciona un tipo de persona")
-			.locatedBy("//mat-option/span[contains(.,'Natural')]");
+			.locatedBy("//mat-option/span[contains(.,'{0}')]");
 
 	public static final Target TXT_NOMBRETITULAR = Target.the("Texto para ingresar el nobre del titular de la cuenta")
 			.locatedBy("//div/input[@placeholder='Nombre titular']");
@@ -26,7 +26,7 @@ public class SophosStorePaymentUserInterface {
 			.locatedBy("//div/span[contains(.,'Tipo de documento')]");
 
 	public static final Target SLC_TIPODOCUMENTO = Target.the("Selecciona un tipo de documento")
-			.locatedBy("//mat-option/span[contains(.,'CC')]");
+			.locatedBy("//mat-option/span[contains(.,'{0}')]");
 
 	public static final Target TXT_DOCUMENTO = Target.the("Ingresa número de documento")
 			.locatedBy("//div/input[@placeholder='Documento']");
