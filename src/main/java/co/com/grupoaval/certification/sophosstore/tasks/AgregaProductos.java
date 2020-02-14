@@ -1,6 +1,7 @@
 package co.com.grupoaval.certification.sophosstore.tasks;
 
 import co.com.grupoaval.certification.sophosstore.interactions.EligeProducto;
+import co.com.grupoaval.certification.sophosstore.interactions.Esperar;
 import co.com.grupoaval.certification.sophosstore.userinterface.SophosStoreHomeUserInterface;
 import co.com.grupoaval.certification.sophosstore.userinterface.SophosStoreProductsUserInterface;
 import net.serenitybdd.screenplay.Actor;
@@ -18,11 +19,12 @@ public class AgregaProductos implements Task {
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		actor.attemptsTo(Click.on(SophosStoreHomeUserInterface.BTN_CELULARES),
-				Click.on(SophosStoreProductsUserInterface.BTN_TODASLASCATEGORIAS));
-
-		EligeProducto.conNombre("producto", SophosStoreProductsUserInterface.PRODUCTITEM.resolveAllFor(actor));
-
+		actor.attemptsTo(
+				Click.on(SophosStoreHomeUserInterface.BTN_CELULARES),
+				Click.on(SophosStoreProductsUserInterface.BTN_TODASLASCATEGORIAS),
+				EligeProducto.conNombre(producto),
+				Esperar.CargaDeContenido()
+		);
 	}
 
 	public static AgregaProductos seleccionaProducto(String producto) {

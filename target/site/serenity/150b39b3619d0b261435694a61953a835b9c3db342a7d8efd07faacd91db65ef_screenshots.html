@@ -111,7 +111,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 13-02-2020 09:00</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-02-2020 17:17</span>
     <br style="clear:left"/>
 </div>
 
@@ -160,9 +160,9 @@ completo de la aplicaci�n
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><i class='fa fa-check-square-o success-icon fa-2x' title='SUCCESS'></i></span>
+                            <span class="outcome-icon"><i class='fa fa-exclamation-triangle error-icon fa-2x' title='ERROR'></i></span>
                             <span class="test-case-title">
-                                <span class="success-color">Realizar Compra desde todas las categorias.
+                                <span class="error-color">Realizar Compra desde todas las categorias.
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -179,29 +179,128 @@ completo de la aplicaci�n
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+
+                        <div class="panel-heading title="No such window exception: The following error occurred: no such window: target window already closedfrom unknown error: web view not found  (Session info: chrome=79.0.3945.130)  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Windows NT 10.0.18362 x86_64) (WARNING: The server did not provide any stacktrace information)Command duration or timeout: 0 millisecondsBuild info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'System info: host: 'DESKTOP-RF4L3V9', ip: '192.168.99.93', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'Driver info: org.openqa.selenium.remote.RemoteWebDriverCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: C:\Users\QV-3984\AppData\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 79.0.3945.130, webStorageEnabled: true}Session ID: 6493e0da5f3cec95ba21ffb4fa5fe86b*** Element info: {Using=xpath, value=//input[@ng-reflect-name='city']}">
+                            No such window exception: The following error occurred: no such window: target window already closedfrom unknown error: web view not found  (Session info: chrome=79.0.3945.130)  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c...
+                        </div>
+                <div><!-- Stack trace -->
+                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                            data-target="#stacktraceModal-overall">
+                        View details
+                    </button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="stacktraceModal-overall" tabindex="-1" role="dialog"
+                     aria-labelledby="stacktraceModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-label="Close"><span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title" id="stacktraceModalLabel">
+                                    org.openqa.selenium.NoSuchWindowException
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                    <h5>
+                                        <pre>The following error occurred: no such window: target window already closed<br>from unknown error: web view not found<br>  (Session info: chrome=79.0.3945.130)<br>  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Windows NT 10.0.18362 x86_64) (WARNING: The server did not provide any stacktrace information)<br>Command duration or timeout: 0 milliseconds<br>Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'<br>System info: host: 'DESKTOP-RF4L3V9', ip: '192.168.99.93', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'<br>Driver info: org.openqa.selenium.remote.RemoteWebDriver<br>Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: C:\Users\QV-3984\AppData\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 79.0.3945.130, webStorageEnabled: true}<br>Session ID: 6493e0da5f3cec95ba21ffb4fa5fe86b<br>*** Element info: {Using=xpath, value=//input[@ng-reflect-name='city']}</pre>
+                                    </h5>
+                                    co.com.grupoaval.certification.sophosstore.tasks.DiligenciaDatos.performAs(DiligenciaDatos.java
+                                    :30) <br>
+                                    co.com.grupoaval.certification.sophosstore.stepdefinitions.RealizarCompraStepDefinition.elUsuarioDiligenciaLaInformacionDeEnvO(RealizarCompraStepDefinition.java
+                                    :53) <br>
+                                    cucumber.runner.Runner.runPickle(Runner.java
+                                    :80) <br>
+                                    org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java
+                                    :89) <br>
+                                    org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java
+                                    :41) <br>
+                                    org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java
+                                    :541) <br>
+                                    org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java
+                                    :763) <br>
+                                    org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java
+                                    :463) <br>
+                                    org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java
+                                    :209) <br>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel-body">
+                    <a href="#" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="12d58b13be70b9ab6c0803572b8dd514c1ee4ca86c0817099a4a33b20c067805.png" title="Given que el usuario se encuentra en la pagina principal" width="1366"/>
-                <img src="12d58b13be70b9ab6c0803572b8dd514c1ee4ca86c0817099a4a33b20c067805.png" title="actor opens the http://aca5ae963492711eaa1ea0a23e0edceb-673580570.us-east-1.elb.amazonaws.com/" width="1366"/>
-                <img src="8c00aad1aa4fa2c41fb1d237d858fa612b852f5e74f23950b9169b4b00eb6167.png" title="When el ingresa la informacion de la cuenta
+                <img src="8450e9f008f9cecc055e93484abb92e88e67cbae6a2df3073a43fea43ec88a80.png" title="Given que el usuario se encuentra en la pagina principal" width="1366"/>
+                <img src="8450e9f008f9cecc055e93484abb92e88e67cbae6a2df3073a43fea43ec88a80.png" title="actor opens the http://aca5ae963492711eaa1ea0a23e0edceb-673580570.us-east-1.elb.amazonaws.com/" width="1366"/>
+                <img src="85b673267a997bf5b227683a4a90f74c40bc2dcfbc9a71a852c4472093e8a806.png" title="When el ingresa la informacion de la cuenta
 | username | password |
 | chenamol | prueba123 |" width="1366"/>
-                <img src="a6f26736ecfb7b419ee54f015d97f8d6e6ca18aab3ef6b69bc9729e3a2e4a266.png" title="actor enters 'chenamol' into Ingresa nombre de usuario" width="1366"/>
-                <img src="f67f8d6285ef2f1f912124d728b9c83403837f47b8ba1bf9474267a131e617f5.png" title="actor enters 'prueba123' into Ingresa password de la cuenta" width="1366"/>
-                <img src="c1a3406d8755753caf8fc5ad2c6c8da36f97a4e23e1c96cdba403aa22a912fc4.png" title="actor enters 'prueba123' into Ingresa password de la cuenta" width="1366"/>
-                <img src="f817fce96859060ff21048a78d899f32f47889167bf67439893d06536b3954ae.png" title="actor clicks on Bot&oacute;n para ingresar a la p&aacute;gina" width="1366"/>
-                <img src="66de3d0529eea4caae04371e5978b34d067afd13d242ceef06884829f6066df9.png" title="actor clicks on Bot&oacute;n para ingresar a la p&aacute;gina" width="1366"/>
-                <img src="50259401b195a2becd295237dc3b5dd759914ec82dcffec3e4822d28e0af05e2.png" title="And el usuario agrega los productos a comprar desde la seccion Todas las categorias
+                <img src="919ea054c60bf8ce489096af7518ff2c370ad3b8ae507f81c684c2d730faa56a.png" title="When el ingresa la informacion de la cuenta
+| username | password |
+| chenamol | prueba123 |" width="1366"/>
+                <img src="4c512505324b78899be7d613140cd5d6db6cb0f29df686f36df63270dc28effa.png" title="actor clicks on Bot&oacute;n para abrir la opcion de ingresar " width="1366"/>
+                <img src="adb2ebe36c9492767d046b61fa9333229cc04a0988a93eb64afe00bd8a126e56.png" title="actor clicks on Bot&oacute;n para abrir la opcion de ingresar " width="1366"/>
+                <img src="d9c053f972893628358e3cf31489d55dedd2ac7938a071c1069ec9a22ea6f6f6.png" title="actor clicks on Bot&oacute;n para visualizar la ventana de inicio de sesi&oacute;n" width="1366"/>
+                <img src="f9a8fd3c41f83d3843ec24fcaa05895520e08c7e448f21ed8d06ae61ae6c5bfa.png" title="actor clicks on Bot&oacute;n para visualizar la ventana de inicio de sesi&oacute;n" width="1366"/>
+                <img src="3375d5f8605af31104d3e617fa20c67c9d0b16caf3282906ecb110039229a812.png" title="actor enters 'chenamol' into Ingresa nombre de usuario" width="1366"/>
+                <img src="0a8d77bb98bc4c81df1b34f3711794c96b65e4dfbde56c5aefa7fa5130b7d2a1.png" title="actor enters 'chenamol' into Ingresa nombre de usuario" width="1366"/>
+                <img src="7fc3c476492677a0a75b3b9e640a1ee8b28be1378591190f65a021d562e54890.png" title="actor enters 'prueba123' into Ingresa password de la cuenta" width="1366"/>
+                <img src="d23ec0b56ed3e3c0f376c59665b7ebf812f3f9ccf84dac3c85d90bdc94cc214d.png" title="actor enters 'prueba123' into Ingresa password de la cuenta" width="1366"/>
+                <img src="6bba62d5179bc922c6952e5228d89677d4c9d03408f4013b010f951fad785a50.png" title="actor clicks on Bot&oacute;n para ingresar a la p&aacute;gina" width="1366"/>
+                <img src="d256cda1c4dee1aaf8af3a8d0eb16294b2097cd9764be11ba1f71f5b1597650e.png" title="actor clicks on Bot&oacute;n para ingresar a la p&aacute;gina" width="1366"/>
+                <img src="c988e207a97c901d9c8b493e1d1245acb961cf815b8d4447b7ed91b6b62d693f.png" title="And el usuario agrega los productos a comprar desde la seccion Todas las categorias
 | producto |
 | Airpods |
 | Celular HUAWEI Psmart 2019 DS 4G Rojo |" width="1366"/>
-                <img src="3e94747daffbb90444ba187bc79d635417b78b83a2c5a6a004c6293aba17a2b6.png" title="actor clicks on Opciones del menu superior" width="1366"/>
-                <img src="ebb6721f2cdb1837c07789dccb194bb52b24a4065d9af7085623ca54e9b07c01.png" title="actor clicks on Opci&oacute;n que permite ver todos los productos" width="1366"/>
-                <img src="7724d2b3b8ab3a11c8c3fc76d7874bc1073b9a93970cbfdf0229cfb9e72e5832.png" title="actor clicks on Opci&oacute;n que permite ver todos los productos" width="1366"/>
-                <img src="50259401b195a2becd295237dc3b5dd759914ec82dcffec3e4822d28e0af05e2.png" title="And el usuario elimina uno de los productos del carrito
+                <img src="17d7c4540183475735e2717622a51f69a938f14bf6a90a89bc697430bbb05728.png" title="actor clicks on Opciones del menu superior" width="1366"/>
+                <img src="5538a729b92e5a7b8e0fa4144b56519a1a9434899bc36945e0e63804a23f2766.png" title="actor clicks on Opciones del menu superior" width="1366"/>
+                <img src="76eeaf9a25693d0e1ea3af76ba9b5087a127c7ee6cedac87bb18b2deed8cbbbc.png" title="actor clicks on Opci&oacute;n que permite ver todos los productos" width="1366"/>
+                <img src="c8e052ae1a07d783311fabb8635611b38e9693eda5e1ba9de08e256730647ec2.png" title="actor clicks on Opci&oacute;n que permite ver todos los productos" width="1366"/>
+                <img src="56243fc62a7c21a97e6a1b49e99b612bb23eb45eca55dd2f1e2909c57c93bc3c.png" title="actor clicks on Opciones del menu superior" width="1366"/>
+                <img src="d2ae20baea7c1a5cf9fc90ad1b01a001e9a6c983a6e6f3cc83a310ed0e3c9f38.png" title="actor clicks on Opciones del menu superior" width="1366"/>
+                <img src="1331fc75d88e559601b116f81f601c1a4188a8a4d4ea5936ffead90ec64c8005.png" title="actor clicks on Opci&oacute;n que permite ver todos los productos" width="1366"/>
+                <img src="5d62eb56ae16b7c3166d9cbcb73a0e16899a20f50ae1adb5959f5327162d87d5.png" title="actor clicks on Opci&oacute;n que permite ver todos los productos" width="1366"/>
+                <img src="7e906843686f6a6cdd6929d611b5107301ba97a7acc9c7e9ec5a28a45a7db97d.png" title="And el usuario elimina uno de los productos del carrito
 | producto |
-| Celular HUAWEI Psmart 2019 DS 4G Rojo |" width="1366"/>
-                <img src="50259401b195a2becd295237dc3b5dd759914ec82dcffec3e4822d28e0af05e2.png" title="Then el finaliza con la compra con exito visualizando el mensaje Felicidades! Su orden ha sido procesada: <span class='success-color'>SUCCESS</span>" width="1366"/>
+| Airpods |" width="1366"/>
+                <img src="89e7f769fa45f18ea59f395e12aa0ec04a71b849052283b070dc0fae4a6f9a7e.png" title="actor clicks on Bot&oacute;n Correspondiente al carrito de compra" width="1366"/>
+                <img src="6045a294e8ef89f9c97cc1c9d96f565d089f5d4cf06ad779e6853095e003ab23.png" title="actor clicks on Ingresa al Detalle del Carrito" width="1366"/>
+                <img src="d35715a80c568b748981d51b4d142eab7a587c79558d3e97cb6f9bbea2a41f45.png" title="actor clicks on Ingresa al Detalle del Carrito" width="1366"/>
+                <img src="d35715a80c568b748981d51b4d142eab7a587c79558d3e97cb6f9bbea2a41f45.png" title="actor clicks on Lista de productos en el carrito de compras" width="1366"/>
+                <img src="2c539242424c0a55ebdefb039a8d8f8d1f5cc0b90de352e28e0896a4ed4a2b5a.png" title="actor clicks on Lista de productos en el carrito de compras" width="1366"/>
+                <img src="2c539242424c0a55ebdefb039a8d8f8d1f5cc0b90de352e28e0896a4ed4a2b5a.png" title="actor clicks on Bot&oacute;n para proceder a finalizar la compra" width="1366"/>
+                <img src="7e906843686f6a6cdd6929d611b5107301ba97a7acc9c7e9ec5a28a45a7db97d.png" title="actor clicks on Bot&oacute;n para proceder a finalizar la compra" width="1366"/>
+                <img src="7e906843686f6a6cdd6929d611b5107301ba97a7acc9c7e9ec5a28a45a7db97d.png" title="And el usuario diligencia la informacion de envio
+| nombre | pApellido | sApellido | compania | email | telefono | pais | ciudad | estado | codigoPostal | direccion |
+| Cesar | Henao | Molina | qVision | chena@corp.com | 31375544 | Colombia | Medellin | Antioquia | 050035111 | cll 36 # 20 -13 |" width="1366"/>
+                <img src="ad26fb99dc2a9a4b3b20106964d107f2262c17e63f6d61c389a40dbc328169d6.png" title="actor enters 'Cesar' into Campo para ingresar nombre de usuario" width="1366"/>
+                <img src="04dd2300f0540d5ddcb4cb5a64d787336a5cf845e71a94e42ab2c67dfce8c0b7.png" title="actor enters 'Henao' into Campo para ingresar el primer apellido del usuario" width="1366"/>
+                <img src="9071d4e733f7b791175f0126b902dbd0476d57b807face9e5c8cfea057a696bb.png" title="actor enters 'Henao' into Campo para ingresar el primer apellido del usuario" width="1366"/>
+                <img src="b0b6225f1b71301229d53c5be0a489ec6a9a6afec84b374cc062083edae9e7e6.png" title="actor enters 'Molina' into Campo para ingresar el Segundo apellido del usuario" width="1366"/>
+                <img src="e9ad37af3b2cb85e0533918c2687b53ec892dcb962ed79e054195a68df7dba85.png" title="actor enters 'Molina' into Campo para ingresar el Segundo apellido del usuario" width="1366"/>
+                <img src="636e13b599fb7947db6d46ab8387ef4aeac858d2c361c5e979c812199b58ea75.png" title="actor enters 'qVision' into Campo para ingresar la compa&ntilde;ia del usuario" width="1366"/>
+                <img src="8f4f8d9832b68653ffa6df36057044d84b6db6c2f1665e37fbf7c627ccea7467.png" title="actor enters 'qVision' into Campo para ingresar la compa&ntilde;ia del usuario" width="1366"/>
+                <img src="89981eaf3409f6ecbc8191aa556cddec4313eceda93cb21c52bdd61ab0ceb356.png" title="actor enters 'chena@corp.com' into Campo para ingresar el correo del usuario" width="1366"/>
+                <img src="dc8ef64ae6d3950ac2578394cfca488260840202ca3f0ab39c074f4b18099f28.png" title="actor enters 'chena@corp.com' into Campo para ingresar el correo del usuario" width="1366"/>
+                <img src="19059521476893c08390f5428385f5fdc313f65e02271aafb854413cccfa7cf7.png" title="actor enters '31375544' into Campo para ingresar el tel&eacute;fono del usuario" width="1366"/>
+                <img src="719ca3a7da05d6a6a7d8ae916afdd678d31b913ecbdf7f1e6fad21b417896fc4.png" title="actor enters '31375544' into Campo para ingresar el tel&eacute;fono del usuario" width="1366"/>
+                <img src="2c30fecfeb5609fed196fbae7bb753b1506963705ff035d04052ac739ebfe8eb.png" title="actor clicks on Campo para ingresar el pais del usuario" width="1366"/>
+                <img src="0a96fcd680c32967a239b8424d0b365a907abc3a7bf6e3581ad21373580aac48.png" title="actor clicks on Campo para ingresar el pais del usuario" width="1366"/>
+                <img src="0a96fcd680c32967a239b8424d0b365a907abc3a7bf6e3581ad21373580aac48.png" title="actor clicks on Selecciona uno de los paises" width="1366"/>
+                <img src="f490d17bb3acdeac21cb70af8b07fe53bebc1cd22c4dfe7b3c22ca8e4a12de9e.png" title="actor clicks on Selecciona uno de los paises: <span class='error-color'>ERROR</span>" width="1366"/>
             </div>
         </div>
 

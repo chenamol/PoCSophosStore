@@ -31,11 +31,11 @@ public class SophosStorePaymentUserInterface {
 	public static final Target TXT_DOCUMENTO = Target.the("Ingresa número de documento")
 			.locatedBy("//div/input[@placeholder='Documento']");
 
-	public static final Target TXT_EMAIL = Target.the("Ingresa un correo electrónico")
-			.locatedBy("//*[@id=\"mat-input-30\"]");
+	public static final Target TXT_EMAIL = Target.the("Ingresa un correo electrónico").locatedBy(
+			"/html/body/app-root/div/app-pages/mat-sidenav-container/mat-sidenav-content/div[1]/app-checkout/mat-horizontal-stepper/div[2]/div[3]/form[2]/div/div[7]/mat-form-field/div/div[1]/div/input");
 
-	public static final Target TXT_TELEFONO = Target.the("Campo para ingresar el teléfono")
-			.locatedBy("/html/body/app-root/div/app-pages/mat-sidenav-container/mat-sidenav-content/div[1]/app-checkout/mat-horizontal-stepper/div[2]/div[3]/form[2]/div/div[8]/mat-form-field/div/div[1]/div/input");
+	public static final Target TXT_TELEFONO = Target.the("Campo para ingresar el teléfono").locatedBy(
+			"/html/body/app-root/div/app-pages/mat-sidenav-container/mat-sidenav-content/div[1]/app-checkout/mat-horizontal-stepper/div[2]/div[3]/form[2]/div/div[8]/mat-form-field/div/div[1]/div/input");
 
 	public static final Target BTN_REALIZARPAGO = Target.the("Botón para proceder con el pago")
 			.locatedBy("//div/button[contains(.,'Realizar pago')]");

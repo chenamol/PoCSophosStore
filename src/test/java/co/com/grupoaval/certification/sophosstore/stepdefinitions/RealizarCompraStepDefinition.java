@@ -6,9 +6,9 @@ import org.hamcrest.Matchers;
 
 import co.com.grupoaval.certification.sophosstore.models.DatosDePagoPSE;
 import co.com.grupoaval.certification.sophosstore.models.DatosDeUsuario;
-import co.com.grupoaval.certification.sophosstore.models.DatosSelecionProducto;
+import co.com.grupoaval.certification.sophosstore.models.DatosProducto;
 import co.com.grupoaval.certification.sophosstore.questions.VerificarCompra;
-import co.com.grupoaval.certification.sophosstore.tasks.AgregaProductos;
+import static co.com.grupoaval.certification.sophosstore.tasks.AgregaProductos.seleccionaProducto;
 import co.com.grupoaval.certification.sophosstore.tasks.AgregaProductosPorCategoria;
 import co.com.grupoaval.certification.sophosstore.tasks.ConfirmaPedido;
 import co.com.grupoaval.certification.sophosstore.tasks.DiligenciaDatos;
@@ -33,18 +33,18 @@ public class RealizarCompraStepDefinition {
 	}
 
 	@When("^el usuario agrega los productos a comprar$")
-	public void elUsuarioAgregaLosProductosAComprar(List<DatosSelecionProducto> DatosSelecionProducto) {
+	public void elUsuarioAgregaLosProductosAComprar(List<DatosProducto> DatosProducto) {
 		OnStage.theActorInTheSpotlight().attemptsTo(
-				AgregaProductosPorCategoria.seleccionaCategoria(DatosSelecionProducto.get(0).getCategoria())
-						.seleccionaProducto(DatosSelecionProducto.get(0).getProducto()),
-				AgregaProductosPorCategoria.seleccionaCategoria(DatosSelecionProducto.get(1).getCategoria())
-						.seleccionaProducto(DatosSelecionProducto.get(1).getProducto()));
+				AgregaProductosPorCategoria.seleccionaCategoria(DatosProducto.get(0).getCategoria())
+						.seleccionaProducto(DatosProducto.get(0).getProducto()),
+				AgregaProductosPorCategoria.seleccionaCategoria(DatosProducto.get(1).getCategoria())
+						.seleccionaProducto(DatosProducto.get(1).getProducto()));
 	}
 
 	@When("^el usuario elimina uno de los productos del carrito$")
-	public void elUsuarioEliminaUnoDeLosProductosDelCarrito(List<DatosSelecionProducto> DatosSelecionProducto) {
+	public void elUsuarioEliminaUnoDeLosProductosDelCarrito(List<DatosProducto> DatosProducto) {
 		OnStage.theActorInTheSpotlight()
-				.attemptsTo(EliminarProductosDelCarrito.seleccionaProducto(DatosSelecionProducto.get(0).getProducto()));
+				.attemptsTo(EliminarProductosDelCarrito.seleccionaProducto(DatosProducto.get(0).getProducto()));
 	}
 
 	@When("^el usuario diligencia la informacion de envio$")
@@ -69,13 +69,23 @@ public class RealizarCompraStepDefinition {
 
 	@Then("^el usuario selecciona metodo de pago a traves de pse con datos$")
 	public void elUsuarioSeleccionaMetodoDePagoATravezDePseConDtos(List<DatosDePagoPSE> DatosDePagoPSE) {
-		OnStage.theActorInTheSpotlight()
-				.attemptsTo(DiligenciaMetodoDePagoPSE.conBanco(DatosDePagoPSE.get(0).getBank())
-						.conTipoPersona(DatosDePagoPSE.get(0).getKindPerson())
-						.conNombreTirular(DatosDePagoPSE.get(0).getOwnerName())
-						.conTipoDocumento(DatosDePagoPSE.get(0).getDocumentType())
-						.conDocumento(DatosDePagoPSE.get(0).getDocument()).conEmail(DatosDePagoPSE.get(0).getEmail())
-						.conTelefono(DatosDePagoPSE.get(0).getPhone()));
+		
+		DatosDePagoPSE.forEach(datos ->{
+			OnStage.theActorInTheSpotlight()
+			.attemptsTo(DiligenciaMetodoDePagoPSE.conBanco(datos.getBank())
+					.conTipoPersona(datos.getKindPerson())
+					.conNombreTirular(datos.getOwnerName())
+					.conTipoDocumento(datos.getDocumentType())
+					.conDocumento(datos.getDocument()).conEmail(datos.getEmail())
+					.conTelefono(datos.getPhone()));
+		});
+//		OnStage.theActorInTheSpotlight()
+//				.attemptsTo(DiligenciaMetodoDePagoPSE.conBanco(DatosDePagoPSE.get(0).getBank())
+//						.conTipoPersona(DatosDePagoPSE.get(0).getKindPerson())
+//						.conNombreTirular(DatosDePagoPSE.get(0).getOwnerName())
+//						.conTipoDocumento(DatosDePagoPSE.get(0).getDocumentType())
+//						.conDocumento(DatosDePagoPSE.get(0).getDocument()).conEmail(DatosDePagoPSE.get(0).getEmail())
+//						.conTelefono(DatosDePagoPSE.get(0).getPhone()));
 
 	}
 
@@ -89,11 +99,12 @@ public class RealizarCompraStepDefinition {
 	// ESCENARIO PARA BUSCAR POR TODAS LAS CATEGORIAS
 
 	@When("^el usuario agrega los productos a comprar desde la seccion Todas las categorias$")
-	public void elUsuarioAgregaLosProductosAComprarDesdeLaSeccionTodasLasCategorias(
-			List<DatosSelecionProducto> DatosSelecionProducto) {
-		OnStage.theActorInTheSpotlight()
-				.attemptsTo(AgregaProductos.seleccionaProducto(DatosSelecionProducto.get(0).getProducto())
-						.seleccionaProducto(DatosSelecionProducto.get(0).getProducto()));
+	public void elUsuarioAgregaLosProductosAComprarDesdeLaSeccionTodasLasCategorias(List<DatosProducto> datosProducto) {
+		
+		datosProducto.forEach(producto-> {
+			OnStage.theActorInTheSpotlight().attemptsTo(seleccionaProducto(producto.getProducto()));
+		});
+
 	}
 
 }

@@ -40,12 +40,11 @@ public class LoginStepDefinition {
 		OnStage.theActorInTheSpotlight().attemptsTo(IniciaSesion.conUsername(DatosInicioSesion.get(0).getUsername())
 				.conPassword(DatosInicioSesion.get(0).getPassword()));
 		
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	try {
+		Thread.sleep(3000);
+	} catch (InterruptedException e) {
+		e.printStackTrace();
+	}
 
 	}
 
