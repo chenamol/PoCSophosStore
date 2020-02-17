@@ -52,9 +52,8 @@ public class RealizarCompraStepDefinition {
 	public void elUsuarioEliminaUnoDeLosProductosDelCarrito(List<DatosProducto> datosProducto) {
 		datosProducto.forEach(producto -> {
 
-			OnStage.theActorInTheSpotlight()
-					.attemptsTo(EliminarProductosDelCarrito.seleccionaProducto(producto.getProducto()),
-							Esperar.CargaDeContenido());
+			OnStage.theActorInTheSpotlight().attemptsTo(
+					EliminarProductosDelCarrito.seleccionaProducto(producto.getProducto()), Esperar.CargaDeContenido());
 		});
 
 	}
@@ -63,13 +62,13 @@ public class RealizarCompraStepDefinition {
 	public void elUsuarioDiligenciaLaInformacionDeEnvO(List<DatosDeUsuario> datosDeUsuario) {
 		datosDeUsuario.forEach(datos -> {
 
-			OnStage.theActorInTheSpotlight()
-					.attemptsTo(DiligenciaDatos.conNombre(datos.getfirstame())
-							.conPrimerApellido(datos.getfLastname()).conSegundoApellido(datos.getsLastname())
-							.conCompania(datos.getCompany()).conEmail(datos.getEmail()).conTelefono(datos.getPhone())
-							.conPais(datos.getCountry()).conCiudad(datos.getCity()).conEstado(datos.getState())
+			OnStage.theActorInTheSpotlight().attemptsTo(
+					DiligenciaDatos.conNombre(datos.getfirstame()).conPrimerApellido(datos.getfLastname())
+							.conSegundoApellido(datos.getsLastname()).conCompania(datos.getCompany())
+							.conEmail(datos.getEmail()).conTelefono(datos.getPhone()).conPais(datos.getCountry())
+							.conCiudad(datos.getCity()).conEstado(datos.getState())
 							.conCodigoPostal(datos.getPostalCode()).conDireccion(datos.getAddress()),
-							Esperar.CargaDeContenido());
+					Esperar.CargaDeContenido());
 
 		});
 
@@ -85,12 +84,11 @@ public class RealizarCompraStepDefinition {
 	public void elUsuarioSeleccionaMetodoDePagoATravezDePseConDtos(List<DatosDePagoPSE> datosDePagoPSE) {
 
 		datosDePagoPSE.forEach(datos -> {
-			OnStage.theActorInTheSpotlight()
-					.attemptsTo(DiligenciaMetodoDePagoPSE.conBanco(datos.getBank())
-							.conTipoPersona(datos.getKindPerson()).conNombreTirular(datos.getOwnerName())
-							.conTipoDocumento(datos.getDocumentType()).conDocumento(datos.getDocument())
-							.conEmail(datos.getEmail()).conTelefono(datos.getPhone()),
-							Esperar.CargaDeContenido());
+			OnStage.theActorInTheSpotlight().attemptsTo(
+					DiligenciaMetodoDePagoPSE.conBanco(datos.getBank()).conTipoPersona(datos.getKindPerson())
+							.conNombreTirular(datos.getOwnerName()).conTipoDocumento(datos.getDocumentType())
+							.conDocumento(datos.getDocument()).conEmail(datos.getEmail()).conTelefono(datos.getPhone()),
+					Esperar.CargaDeContenido());
 		});
 
 	}
@@ -101,8 +99,6 @@ public class RealizarCompraStepDefinition {
 		OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerificarCompra.exitosa(), Matchers.is(mensaje)));
 
 	}
-
-	// ESCENARIO PARA BUSCAR POR TODAS LAS CATEGORIAS
 
 	@When("^el usuario agrega los productos a comprar desde la seccion Todas las categorias$")
 	public void elUsuarioAgregaLosProductosAComprarDesdeLaSeccionTodasLasCategorias(List<DatosProducto> datosProducto) {

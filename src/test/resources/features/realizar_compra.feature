@@ -36,6 +36,7 @@ Feature: Realizar compra en la pagina SophosStore
       | Airpods   |
       | Popsocket |
     #  Celular HUAWEI Psmart 2019 DS 4G Rojo
+    # Popsocket
     And el usuario elimina uno de los productos del carrito
       | producto |
       | Airpods  |

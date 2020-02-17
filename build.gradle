@@ -35,3 +35,6 @@ dependencies {
 }
 
 gradle.startParameter.continueOnFailure = true  
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8

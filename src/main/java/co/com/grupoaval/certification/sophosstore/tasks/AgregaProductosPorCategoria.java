@@ -22,8 +22,8 @@ public class AgregaProductosPorCategoria implements Task {
 		actor.attemptsTo(
 
 				Click.on(SophosStoreHomeUserInterface.BTN_MENUSUPERIOR.of(categoria)),
-				Click.on(SophosStoreProductsUserInterface.PRODUCTITEM.of(producto)),
-				Click.on(SophosStoreProductsUserInterface.BTN_CARRITOPRODUCTO)
+				Click.on(SophosStoreProductsUserInterface.PRODUCTITEM.of(producto))
+				//Click.on(SophosStoreProductsUserInterface.BTN_CARRITOPRODUCTO)
 
 		);
 	}

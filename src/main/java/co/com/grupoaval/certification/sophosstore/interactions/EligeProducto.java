@@ -32,7 +32,7 @@ public class EligeProducto implements Interaction {
 					.click();
 		});
 
-		boolean validator = productos.stream().anyMatch(element -> element.containsText(producto));
+		validator = productos.stream().anyMatch(element -> element.containsText(producto));
 
 		if (!validator) {
 			actor.attemptsTo(Click.on(SophosStoreProductsUserInterface.BTN_SIGUIENTEPAGINA),
