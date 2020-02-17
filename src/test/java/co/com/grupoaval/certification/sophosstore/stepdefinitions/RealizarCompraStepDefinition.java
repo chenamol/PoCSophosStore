@@ -16,6 +16,7 @@ import co.com.grupoaval.certification.sophosstore.tasks.DiligenciaDatos;
 import co.com.grupoaval.certification.sophosstore.tasks.DiligenciaMetodoDePagoPSE;
 import co.com.grupoaval.certification.sophosstore.tasks.EliminarProductosDelCarrito;
 import co.com.grupoaval.certification.sophosstore.tasks.FinalizaCompra;
+import static co.com.grupoaval.certification.sophosstore.tasks.IngresaSeccion.todasLasCategorias;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -105,7 +106,7 @@ public class RealizarCompraStepDefinition {
 
 	@When("^el usuario agrega los productos a comprar desde la seccion Todas las categorias$")
 	public void elUsuarioAgregaLosProductosAComprarDesdeLaSeccionTodasLasCategorias(List<DatosProducto> datosProducto) {
-
+		OnStage.theActorInTheSpotlight().attemptsTo(todasLasCategorias());
 		datosProducto.forEach(producto -> {
 			OnStage.theActorInTheSpotlight().attemptsTo(seleccionaProducto(producto.getProducto()));
 		});
