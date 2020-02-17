@@ -19,12 +19,9 @@ public class AgregaProductos implements Task {
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		actor.attemptsTo(
-				Click.on(SophosStoreHomeUserInterface.BTN_CELULARES),
-				Click.on(SophosStoreProductsUserInterface.BTN_TODASLASCATEGORIAS),
-				EligeProducto.conNombre(producto),
-				Esperar.CargaDeContenido()
-		);
+		actor.attemptsTo(Click.on(SophosStoreHomeUserInterface.BTN_CELULARES),
+				Click.on(SophosStoreProductsUserInterface.BTN_TODASLASCATEGORIAS), EligeProducto.conNombre(producto),
+				Esperar.CargaDeContenido());
 	}
 
 	public static AgregaProductos seleccionaProducto(String producto) {

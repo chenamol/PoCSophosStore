@@ -6,14 +6,21 @@ public class SophosStoreProductsUserInterface {
 
 	public static final Target PRODUCTITEM = Target.the("Pertenece al producto a seleccionar")
 			.locatedBy("//div/div[@class='col ng-star-inserted']//a[contains(.,'{0}')]");
-	
+
 	public static final Target PRODUCLIST = Target.the("Pertenece la lista de todos los productos")
 			.locatedBy("//div/div[@class='col ng-star-inserted']");
 
 	public static final Target BTN_CARRITOPRODUCTO = Target.the("Botón para agregar productos al carro de compras")
 			.locatedBy("//button[@mattooltip=\"Añadir a carrito\"]");
-	
+
 	public static final Target BTN_TODASLASCATEGORIAS = Target.the("Opción que permite ver todos los productos")
 			.locatedBy("//div/button[contains(.,'Todas las Categorias')]");
+
+	public static final Target BTN_SIGUIENTEPAGINA = Target.the("Botón para buscar productos en la siguiente página")
+			.locatedBy("//li/a[@aria-label='Next page']");
+
+	public static final Target BTN_ANTERIORPAGINA = Target
+			.the("Botón para regresar a la página anterior de los productos")
+			.locatedBy("//li/a[@aria-label='Previous page']");
 
 }

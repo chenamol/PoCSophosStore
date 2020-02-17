@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hamcrest.Matchers;
 
+import co.com.grupoaval.certification.sophosstore.interactions.Esperar;
 import co.com.grupoaval.certification.sophosstore.models.DatosDePagoPSE;
 import co.com.grupoaval.certification.sophosstore.models.DatosDeUsuario;
 import co.com.grupoaval.certification.sophosstore.models.DatosProducto;
@@ -33,59 +34,63 @@ public class RealizarCompraStepDefinition {
 	}
 
 	@When("^el usuario agrega los productos a comprar$")
-	public void elUsuarioAgregaLosProductosAComprar(List<DatosProducto> DatosProducto) {
-		OnStage.theActorInTheSpotlight().attemptsTo(
-				AgregaProductosPorCategoria.seleccionaCategoria(DatosProducto.get(0).getCategoria())
-						.seleccionaProducto(DatosProducto.get(0).getProducto()),
-				AgregaProductosPorCategoria.seleccionaCategoria(DatosProducto.get(1).getCategoria())
-						.seleccionaProducto(DatosProducto.get(1).getProducto()));
+	public void elUsuarioAgregaLosProductosAComprar(List<DatosProducto> datosProducto) {
+		datosProducto.forEach(producto -> {
+
+			OnStage.theActorInTheSpotlight().attemptsTo(
+					AgregaProductosPorCategoria.seleccionaCategoria(producto.getCategoria())
+							.seleccionaProducto(producto.getProducto()),
+					Esperar.CargaDeContenido(), AgregaProductosPorCategoria.seleccionaCategoria(producto.getCategoria())
+							.seleccionaProducto(producto.getProducto()));
+
+		});
+
 	}
 
 	@When("^el usuario elimina uno de los productos del carrito$")
-	public void elUsuarioEliminaUnoDeLosProductosDelCarrito(List<DatosProducto> DatosProducto) {
-		OnStage.theActorInTheSpotlight()
-				.attemptsTo(EliminarProductosDelCarrito.seleccionaProducto(DatosProducto.get(0).getProducto()));
+	public void elUsuarioEliminaUnoDeLosProductosDelCarrito(List<DatosProducto> datosProducto) {
+		datosProducto.forEach(producto -> {
+
+			OnStage.theActorInTheSpotlight()
+					.attemptsTo(EliminarProductosDelCarrito.seleccionaProducto(producto.getProducto()),
+							Esperar.CargaDeContenido());
+		});
+
 	}
 
 	@When("^el usuario diligencia la informacion de envio$")
-	public void elUsuarioDiligenciaLaInformacionDeEnvO(List<DatosDeUsuario> DatosDeUsuario) {
-		OnStage.theActorInTheSpotlight()
-				.attemptsTo(DiligenciaDatos.conNombre(DatosDeUsuario.get(0).getfirstame())
-						.conPrimerApellido(DatosDeUsuario.get(0).getfLastname())
-						.conSegundoApellido(DatosDeUsuario.get(0).getsLastname())
-						.conCompania(DatosDeUsuario.get(0).getCompany()).conEmail(DatosDeUsuario.get(0).getEmail())
-						.conTelefono(DatosDeUsuario.get(0).getPhone()).conPais(DatosDeUsuario.get(0).getCountry())
-						.conCiudad(DatosDeUsuario.get(0).getCity()).conEstado(DatosDeUsuario.get(0).getState())
-						.conCodigoPostal(DatosDeUsuario.get(0).getPostalCode())
-						.conDireccion(DatosDeUsuario.get(0).getAddress()));
+	public void elUsuarioDiligenciaLaInformacionDeEnvO(List<DatosDeUsuario> datosDeUsuario) {
+		datosDeUsuario.forEach(datos -> {
+
+			OnStage.theActorInTheSpotlight()
+					.attemptsTo(DiligenciaDatos.conNombre(datos.getfirstame())
+							.conPrimerApellido(datos.getfLastname()).conSegundoApellido(datos.getsLastname())
+							.conCompania(datos.getCompany()).conEmail(datos.getEmail()).conTelefono(datos.getPhone())
+							.conPais(datos.getCountry()).conCiudad(datos.getCity()).conEstado(datos.getState())
+							.conCodigoPostal(datos.getPostalCode()).conDireccion(datos.getAddress()),
+							Esperar.CargaDeContenido());
+
+		});
 
 	}
 
 	@Then("^el usuario verifica la informacion de envio$")
 	public void elUsuarioVerificaLaInformacionDeEnvio() {
-		OnStage.theActorInTheSpotlight().attemptsTo(ConfirmaPedido.realizado());
+		OnStage.theActorInTheSpotlight().attemptsTo(ConfirmaPedido.realizado(), Esperar.CargaDeContenido());
 
 	}
 
 	@Then("^el usuario selecciona metodo de pago a traves de pse con datos$")
-	public void elUsuarioSeleccionaMetodoDePagoATravezDePseConDtos(List<DatosDePagoPSE> DatosDePagoPSE) {
-		
-		DatosDePagoPSE.forEach(datos ->{
+	public void elUsuarioSeleccionaMetodoDePagoATravezDePseConDtos(List<DatosDePagoPSE> datosDePagoPSE) {
+
+		datosDePagoPSE.forEach(datos -> {
 			OnStage.theActorInTheSpotlight()
-			.attemptsTo(DiligenciaMetodoDePagoPSE.conBanco(datos.getBank())
-					.conTipoPersona(datos.getKindPerson())
-					.conNombreTirular(datos.getOwnerName())
-					.conTipoDocumento(datos.getDocumentType())
-					.conDocumento(datos.getDocument()).conEmail(datos.getEmail())
-					.conTelefono(datos.getPhone()));
+					.attemptsTo(DiligenciaMetodoDePagoPSE.conBanco(datos.getBank())
+							.conTipoPersona(datos.getKindPerson()).conNombreTirular(datos.getOwnerName())
+							.conTipoDocumento(datos.getDocumentType()).conDocumento(datos.getDocument())
+							.conEmail(datos.getEmail()).conTelefono(datos.getPhone()),
+							Esperar.CargaDeContenido());
 		});
-//		OnStage.theActorInTheSpotlight()
-//				.attemptsTo(DiligenciaMetodoDePagoPSE.conBanco(DatosDePagoPSE.get(0).getBank())
-//						.conTipoPersona(DatosDePagoPSE.get(0).getKindPerson())
-//						.conNombreTirular(DatosDePagoPSE.get(0).getOwnerName())
-//						.conTipoDocumento(DatosDePagoPSE.get(0).getDocumentType())
-//						.conDocumento(DatosDePagoPSE.get(0).getDocument()).conEmail(DatosDePagoPSE.get(0).getEmail())
-//						.conTelefono(DatosDePagoPSE.get(0).getPhone()));
 
 	}
 
@@ -100,8 +105,8 @@ public class RealizarCompraStepDefinition {
 
 	@When("^el usuario agrega los productos a comprar desde la seccion Todas las categorias$")
 	public void elUsuarioAgregaLosProductosAComprarDesdeLaSeccionTodasLasCategorias(List<DatosProducto> datosProducto) {
-		
-		datosProducto.forEach(producto-> {
+
+		datosProducto.forEach(producto -> {
 			OnStage.theActorInTheSpotlight().attemptsTo(seleccionaProducto(producto.getProducto()));
 		});
 

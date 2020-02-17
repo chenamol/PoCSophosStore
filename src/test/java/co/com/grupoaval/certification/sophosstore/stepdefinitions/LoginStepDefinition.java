@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hamcrest.Matchers;
 
+import co.com.grupoaval.certification.sophosstore.interactions.Esperar;
 import co.com.grupoaval.certification.sophosstore.models.DatosInicioSesion;
 import co.com.grupoaval.certification.sophosstore.questions.VerificarInicioFallido;
 import co.com.grupoaval.certification.sophosstore.questions.VerificarNombreCuenta;
@@ -30,21 +31,21 @@ public class LoginStepDefinition {
 
 	@Given("^que el usuario se encuentra en la pagina principal$")
 	public void queElUsuarioSeEncuentraEnLaPaginaPrincipal() {
-		OnStage.theActorInTheSpotlight()
-				.attemptsTo(Open.url("http://aca5ae963492711eaa1ea0a23e0edceb-673580570.us-east-1.elb.amazonaws.com/"));
+		OnStage.theActorInTheSpotlight().attemptsTo(
+				Open.url("http://aca5ae963492711eaa1ea0a23e0edceb-673580570.us-east-1.elb.amazonaws.com/"),
+				Esperar.CargaDeContenido());
 
 	}
 
 	@When("^el ingresa la informacion de la cuenta$")
-	public void elIngresaLaInformacionDeLaCuenta(List<DatosInicioSesion> DatosInicioSesion) {
-		OnStage.theActorInTheSpotlight().attemptsTo(IniciaSesion.conUsername(DatosInicioSesion.get(0).getUsername())
-				.conPassword(DatosInicioSesion.get(0).getPassword()));
-		
-	try {
-		Thread.sleep(3000);
-	} catch (InterruptedException e) {
-		e.printStackTrace();
-	}
+	public void elIngresaLaInformacionDeLaCuenta(List<DatosInicioSesion> datosInicioSesion) {
+		datosInicioSesion.forEach(datos -> {
+
+			OnStage.theActorInTheSpotlight().attemptsTo(
+					IniciaSesion.conUsername(datos.getUsername()).conPassword(datos.getPassword()),
+					Esperar.CargaDeContenido());
+
+		});
 
 	}
 

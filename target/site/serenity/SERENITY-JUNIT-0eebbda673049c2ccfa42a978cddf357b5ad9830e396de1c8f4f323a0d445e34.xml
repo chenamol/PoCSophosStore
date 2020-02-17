@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Login para la aplicaci�n SophosStore" skipped="0" tests="3" time="96.76" timestamp="2020-02-14 04:09:57"><testcase name="Login usuario exitoso"/><testcase name="Login password incorrecto"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Login para la aplicaci�n SophosStore" skipped="0" tests="3" time="120.81" timestamp="2020-02-17 09:14:55"><testcase name="Login usuario exitoso"/><testcase name="Login password incorrecto"/></testsuite>

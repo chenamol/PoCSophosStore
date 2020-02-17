@@ -22,7 +22,9 @@ public class EligeProducto implements Interaction {
 	public <T extends Actor> void performAs(T actor) {
 		List<WebElementFacade> productos = PRODUCLIST.resolveAllFor(actor);
 		productos.stream().filter(element -> element.containsText(producto)).findFirst().ifPresent(element -> {
-			element.findBy(By.cssSelector("div > mat-card > div.icons > app-controls > div > div > button:nth-child(2)")).click();
+			element.findBy(
+					By.cssSelector("div > mat-card > div.icons > app-controls > div > div > button:nth-child(2)"))
+					.click();
 		});
 
 	}
