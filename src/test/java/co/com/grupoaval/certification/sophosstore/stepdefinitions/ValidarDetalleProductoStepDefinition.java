@@ -9,7 +9,10 @@ import co.com.grupoaval.certification.sophosstore.models.DatosProducto;
 import co.com.grupoaval.certification.sophosstore.questions.VerificaDescripcion;
 import co.com.grupoaval.certification.sophosstore.questions.VerificaImagen;
 import co.com.grupoaval.certification.sophosstore.questions.VerificaNombre;
+import co.com.grupoaval.certification.sophosstore.tasks.AgregaProductos;
 import co.com.grupoaval.certification.sophosstore.tasks.AgregaProductosPorCategoria;
+import co.com.grupoaval.certification.sophosstore.tasks.IngresaProducto;
+import co.com.grupoaval.certification.sophosstore.tasks.IngresaSeccion;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -27,34 +30,30 @@ public class ValidarDetalleProductoStepDefinition {
 		OnStage.theActorCalled(ACTOR);
 	}
 
-	@When("^el usuario agrega el producto a validar$")
-	public void elUsuarioAgregaElProductoAValidar(List<DatosProducto> datosProducto) {
-		datosProducto.forEach(producto -> {
+	@When("^agrega el producto a validar (.*)$")
+	public void elProductoAValidar(String producto) {
 
-			OnStage.theActorInTheSpotlight().attemptsTo(AgregaProductosPorCategoria
-					.seleccionaCategoria(producto.getCategoria()).seleccionaProducto(producto.getProducto()),
-					Esperar.CargaDeContenido());
-
-		});
+		OnStage.theActorInTheSpotlight().attemptsTo(IngresaProducto.alDetalle(producto));
 
 	}
 
-	@Then("^el usuario verifica que muestre el nombre del producto (.*)$")
-	public void elUsuarioVerificaQueMuestreElNombreDelProducto(String producto) {
+	@Then("^verifica que muestre el nombre del producto (.*)$")
+	public void verificaQueMuestreElNombreDelProducto(String producto) {
 		OnStage.theActorInTheSpotlight().attemptsTo(Esperar.CargaDeContenido());
-		OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerificaNombre.delProducto(), Matchers.is(producto)));
+		OnStage.theActorInTheSpotlight()
+				.should(GivenWhenThen.seeThat(VerificaNombre.delProducto(), Matchers.is(producto)));
 	}
 
-	@Then("^el usuario verifica que se muestre imagen de producto$")
-	public void elUsuarioVerificaQueSeMuestreImagenDeProducto() {
+	@Then("^verifica que se muestre imagen de producto$")
+	public void verificaQueSeMuestreImagenDeProducto() {
 		OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerificaImagen.delProducto()));
 
 	}
 
-	@Then("^el usuario verifica que apareza la descripcion del producto (.*)$")
-	public void elUsuarioVerificaQueAparezaLaDescripcionDelProducto(String descripcion) {
-		OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerificaDescripcion.delProducto(), Matchers.is(descripcion)));
-		
+	@Then("^verifica que apareza la descripcion del producto (.*)$")
+	public void verificaQueAparezaLaDescripcionDelProducto(String descripcion) {
+		OnStage.theActorInTheSpotlight()
+				.should(GivenWhenThen.seeThat(VerificaDescripcion.delProducto(), Matchers.is(descripcion)));
 
 	}
 

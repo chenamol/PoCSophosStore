@@ -1,5 +1,6 @@
 package co.com.grupoaval.certification.sophosstore.tasks;
 
+import co.com.grupoaval.certification.sophosstore.exceptions.ProductoNoEncontradoException;
 import co.com.grupoaval.certification.sophosstore.userinterface.SophosStoreHomeUserInterface;
 import co.com.grupoaval.certification.sophosstore.userinterface.SophosStoreProductsUserInterface;
 import net.serenitybdd.screenplay.Actor;
@@ -19,13 +20,15 @@ public class AgregaProductosPorCategoria implements Task {
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
+		try {
 		actor.attemptsTo(
 
+				
 				Click.on(SophosStoreHomeUserInterface.BTN_MENUSUPERIOR.of(categoria)),
-				Click.on(SophosStoreProductsUserInterface.PRODUCTITEM.of(producto))
-				//Click.on(SophosStoreProductsUserInterface.BTN_CARRITOPRODUCTO)
-
-		);
+				Click.on(SophosStoreProductsUserInterface.PRODUCTITEM.of(producto)));
+				} catch (Exception e) {
+					throw new ProductoNoEncontradoException(ProductoNoEncontradoException.MENSAJE_PRODUCTO_NO_ENCONTRADO, e);
+				}
 	}
 
 	public static AgregaProductosPorCategoria seleccionaCategoria(String categoria) {

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Realizar compra en la pagina SophosStore" skipped="0" tests="2" time="158.4" timestamp="2020-02-18 12:08:33"><testcase name="Realizar Compra agregando productos por categoría"><error message="The following error occurred: Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">The following error occurred: Expected enabled element was not enabled</error><system-err>The following error occurred: Expected enabled element was not enabled&#13;
+co.com.grupoaval.certification.sophosstore.tasks.AgregaProductosPorCategoria.performAs(AgregaProductosPorCategoria.java:24)&#13;
+co.com.grupoaval.certification.sophosstore.stepdefinitions.RealizarCompraStepDefinition.lambda$0(RealizarCompraStepDefinition.java:41)&#13;
+co.com.grupoaval.certification.sophosstore.stepdefinitions.RealizarCompraStepDefinition.elUsuarioAgregaLosProductosAComprar(RealizarCompraStepDefinition.java:39)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)&#13;
+org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)&#13;
+</system-err></testcase><testcase name="Realizar Compra desde todas las categorias."/></testsuite>
