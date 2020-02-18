@@ -3,7 +3,6 @@ package co.com.grupoaval.certification.sophosstore.stepdefinitions;
 import java.util.List;
 
 import org.hamcrest.Matchers;
-import org.openqa.selenium.net.EphemeralPortRangeDetector;
 
 import co.com.grupoaval.certification.sophosstore.interactions.Esperar;
 import co.com.grupoaval.certification.sophosstore.models.DatosProducto;
